@@ -1,0 +1,42 @@
+[2023-12-10T18:03:45.374+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test.model_learn manual__2023-12-10T13:03:09.370209+00:00 [queued]>
+[2023-12-10T18:03:45.383+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test.model_learn manual__2023-12-10T13:03:09.370209+00:00 [queued]>
+[2023-12-10T18:03:45.383+0500] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-10T18:03:45.401+0500] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): model_learn> on 2023-12-10 13:03:09.370209+00:00
+[2023-12-10T18:03:45.429+0500] {standard_task_runner.py:57} INFO - Started process 7594 to run task
+[2023-12-10T18:03:45.435+0500] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'test', 'model_learn', 'manual__2023-12-10T13:03:09.370209+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmpu6ht8e9d']
+[2023-12-10T18:03:45.437+0500] {standard_task_runner.py:85} INFO - Job 54: Subtask model_learn
+[2023-12-10T18:03:45.490+0500] {task_command.py:416} INFO - Running <TaskInstance: test.model_learn manual__2023-12-10T13:03:09.370209+00:00 [running]> on host xypma-VirtualBox
+[2023-12-10T18:03:45.592+0500] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='test' AIRFLOW_CTX_TASK_ID='model_learn' AIRFLOW_CTX_EXECUTION_DATE='2023-12-10T13:03:09.370209+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-10T13:03:09.370209+00:00'
+[2023-12-10T18:03:45.593+0500] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-10T18:03:45.593+0500] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /home/xypma/lab3/MLOps_lab3/ && python /home/xypma/lab3/MLOps_lab3/scripts/model_learn.py']
+[2023-12-10T18:03:45.608+0500] {subprocess.py:86} INFO - Output:
+[2023-12-10T18:03:47.726+0500] {subprocess.py:93} INFO - 2023/12/10 18:03:47 INFO mlflow.tracking.fluent: Experiment with name 'train_model' does not exist. Creating a new experiment.
+[2023-12-10T18:03:55.040+0500] {subprocess.py:93} INFO - Successfully registered model 'lr'.
+[2023-12-10T18:03:55.225+0500] {subprocess.py:93} INFO - 2023/12/10 18:03:55 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: lr, version 1
+[2023-12-10T18:03:55.226+0500] {subprocess.py:93} INFO - Created version '1' of model 'lr'.
+[2023-12-10T18:03:55.264+0500] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-12-10T18:03:55.265+0500] {subprocess.py:93} INFO -   File "/home/xypma/lab3/MLOps_lab3/scripts/model_learn.py", line 65, in <module>
+[2023-12-10T18:03:55.265+0500] {subprocess.py:93} INFO -     mlflow.log_artifact(local_path="/home/xflow/project/scripts/train_model.py",
+[2023-12-10T18:03:55.265+0500] {subprocess.py:93} INFO -   File "/home/xypma/lab3/MLOps_lab3/virt/lib/python3.10/site-packages/mlflow/tracking/fluent.py", line 996, in log_artifact
+[2023-12-10T18:03:55.266+0500] {subprocess.py:93} INFO -     MlflowClient().log_artifact(run_id, local_path, artifact_path)
+[2023-12-10T18:03:55.267+0500] {subprocess.py:93} INFO -   File "/home/xypma/lab3/MLOps_lab3/virt/lib/python3.10/site-packages/mlflow/tracking/client.py", line 1149, in log_artifact
+[2023-12-10T18:03:55.268+0500] {subprocess.py:93} INFO -     self._tracking_client.log_artifact(run_id, local_path, artifact_path)
+[2023-12-10T18:03:55.269+0500] {subprocess.py:93} INFO -   File "/home/xypma/lab3/MLOps_lab3/virt/lib/python3.10/site-packages/mlflow/tracking/_tracking_service/client.py", line 529, in log_artifact
+[2023-12-10T18:03:55.273+0500] {subprocess.py:93} INFO -     artifact_repo.log_artifact(local_path, artifact_path)
+[2023-12-10T18:03:55.273+0500] {subprocess.py:93} INFO -   File "/home/xypma/lab3/MLOps_lab3/virt/lib/python3.10/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 38, in log_artifact
+[2023-12-10T18:03:55.275+0500] {subprocess.py:93} INFO -     shutil.copy2(local_file, os.path.join(artifact_dir, os.path.basename(local_file)))
+[2023-12-10T18:03:55.275+0500] {subprocess.py:93} INFO -   File "/usr/lib/python3.10/shutil.py", line 434, in copy2
+[2023-12-10T18:03:55.277+0500] {subprocess.py:93} INFO -     copyfile(src, dst, follow_symlinks=follow_symlinks)
+[2023-12-10T18:03:55.277+0500] {subprocess.py:93} INFO -   File "/usr/lib/python3.10/shutil.py", line 254, in copyfile
+[2023-12-10T18:03:55.277+0500] {subprocess.py:93} INFO -     with open(src, 'rb') as fsrc:
+[2023-12-10T18:03:55.277+0500] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: '/home/xflow/project/scripts/train_model.py'
+[2023-12-10T18:03:55.897+0500] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-10T18:03:55.909+0500] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/xypma/lab3/MLOps_lab3/virt/lib/python3.10/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-10T18:03:55.918+0500] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=test, task_id=model_learn, execution_date=20231210T130309, start_date=20231210T130345, end_date=20231210T130355
+[2023-12-10T18:03:55.941+0500] {standard_task_runner.py:104} ERROR - Failed to execute job 54 for task model_learn (Bash command failed. The command returned a non-zero exit code 1.; 7594)
+[2023-12-10T18:03:55.987+0500] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-10T18:03:56.023+0500] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

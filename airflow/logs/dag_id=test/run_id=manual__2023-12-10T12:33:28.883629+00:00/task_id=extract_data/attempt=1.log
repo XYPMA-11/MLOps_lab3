@@ -1,0 +1,16 @@
+[2023-12-10T17:33:43.750+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test.extract_data manual__2023-12-10T12:33:28.883629+00:00 [queued]>
+[2023-12-10T17:33:43.771+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test.extract_data manual__2023-12-10T12:33:28.883629+00:00 [queued]>
+[2023-12-10T17:33:43.771+0500] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-10T17:33:43.796+0500] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): extract_data> on 2023-12-10 12:33:28.883629+00:00
+[2023-12-10T17:33:43.799+0500] {standard_task_runner.py:57} INFO - Started process 7117 to run task
+[2023-12-10T17:33:43.814+0500] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'test', 'extract_data', 'manual__2023-12-10T12:33:28.883629+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmptwkxzg_w']
+[2023-12-10T17:33:43.821+0500] {standard_task_runner.py:85} INFO - Job 9: Subtask extract_data
+[2023-12-10T17:33:43.908+0500] {task_command.py:416} INFO - Running <TaskInstance: test.extract_data manual__2023-12-10T12:33:28.883629+00:00 [running]> on host xypma-VirtualBox
+[2023-12-10T17:33:44.030+0500] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='test' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2023-12-10T12:33:28.883629+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-10T12:33:28.883629+00:00'
+[2023-12-10T17:33:44.031+0500] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-10T17:33:44.036+0500] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'mkdir data && cd data && mkdir raw && unzip -o -q /home/xypma/lab3/MLOps_lab3/datasets/data.zip -d /home/xypma/lab3/MLOps_lab3/datasets/data/raw/']
+[2023-12-10T17:33:44.045+0500] {subprocess.py:86} INFO - Output:
+[2023-12-10T17:33:44.970+0500] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-12-10T17:33:44.999+0500] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=test, task_id=extract_data, execution_date=20231210T123328, start_date=20231210T123343, end_date=20231210T123344
+[2023-12-10T17:33:45.033+0500] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-10T17:33:45.065+0500] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

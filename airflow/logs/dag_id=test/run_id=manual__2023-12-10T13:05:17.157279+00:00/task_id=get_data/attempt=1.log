@@ -1,0 +1,20 @@
+[2023-12-10T18:05:21.362+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test.get_data manual__2023-12-10T13:05:17.157279+00:00 [queued]>
+[2023-12-10T18:05:21.378+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test.get_data manual__2023-12-10T13:05:17.157279+00:00 [queued]>
+[2023-12-10T18:05:21.378+0500] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-12-10T18:05:21.404+0500] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): get_data> on 2023-12-10 13:05:17.157279+00:00
+[2023-12-10T18:05:21.407+0500] {standard_task_runner.py:57} INFO - Started process 7619 to run task
+[2023-12-10T18:05:21.422+0500] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'test', 'get_data', 'manual__2023-12-10T13:05:17.157279+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmpnspr5xzh']
+[2023-12-10T18:05:21.424+0500] {standard_task_runner.py:85} INFO - Job 55: Subtask get_data
+[2023-12-10T18:05:21.496+0500] {task_command.py:416} INFO - Running <TaskInstance: test.get_data manual__2023-12-10T13:05:17.157279+00:00 [running]> on host xypma-VirtualBox
+[2023-12-10T18:05:21.647+0500] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='test' AIRFLOW_CTX_TASK_ID='get_data' AIRFLOW_CTX_EXECUTION_DATE='2023-12-10T13:05:17.157279+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-10T13:05:17.157279+00:00'
+[2023-12-10T18:05:21.648+0500] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-12-10T18:05:21.649+0500] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /home/xypma/lab3/MLOps_lab3/datasets && gdown 1j7HA_b0U8GZuHoPoVgDRtPwQFg9cALWX']
+[2023-12-10T18:05:21.668+0500] {subprocess.py:86} INFO - Output:
+[2023-12-10T18:05:25.589+0500] {subprocess.py:93} INFO - Downloading...
+[2023-12-10T18:05:25.589+0500] {subprocess.py:93} INFO - From: https://drive.google.com/uc?id=1j7HA_b0U8GZuHoPoVgDRtPwQFg9cALWX
+[2023-12-10T18:05:25.589+0500] {subprocess.py:93} INFO - To: /home/xypma/lab3/MLOps_lab3/datasets/data.zip
+[2023-12-10T18:05:27.920+0500] {subprocess.py:93} INFO -   0%|          | 0.00/18.4M [00:00<?, ?B/s]  3%|▎         | 524k/18.4M [00:00<00:10, 1.72MB/s]  9%|▊         | 1.57M/18.4M [00:00<00:06, 2.63MB/s] 20%|█▉        | 3.67M/18.4M [00:00<00:02, 6.27MB/s] 26%|██▌       | 4.72M/18.4M [00:00<00:01, 7.14MB/s] 31%|███▏      | 5.77M/18.4M [00:00<00:01, 7.84MB/s] 37%|███▋      | 6.82M/18.4M [00:01<00:01, 8.34MB/s] 43%|████▎     | 7.86M/18.4M [00:01<00:01, 8.08MB/s] 48%|████▊     | 8.91M/18.4M [00:01<00:01, 8.67MB/s] 54%|█████▍    | 9.96M/18.4M [00:01<00:00, 8.95MB/s] 60%|█████▉    | 11.0M/18.4M [00:01<00:00, 9.29MB/s] 65%|██████▌   | 12.1M/18.4M [00:01<00:00, 9.37MB/s] 71%|███████   | 13.1M/18.4M [00:01<00:00, 9.28MB/s] 77%|███████▋  | 14.2M/18.4M [00:01<00:00, 9.06MB/s] 83%|████████▎ | 15.2M/18.4M [00:01<00:00, 9.41MB/s] 88%|████████▊ | 16.3M/18.4M [00:02<00:00, 9.46MB/s] 94%|█████████▍| 17.3M/18.4M [00:02<00:00, 9.44MB/s]100%|█████████▉| 18.4M/18.4M [00:02<00:00, 9.52MB/s]100%|██████████| 18.4M/18.4M [00:02<00:00, 7.99MB/s]
+[2023-12-10T18:05:28.056+0500] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-12-10T18:05:28.097+0500] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=test, task_id=get_data, execution_date=20231210T130517, start_date=20231210T130521, end_date=20231210T130528
+[2023-12-10T18:05:28.157+0500] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-10T18:05:28.209+0500] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
